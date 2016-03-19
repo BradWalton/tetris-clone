@@ -42,8 +42,8 @@ var objects = [
     },
     {//Reverse L
         fill: '#FF00FF',//pink
-        0:[[0,0],[0,1],[0,2],[1,2]], 1:[[0,0],[1,0],[2,0],[0,1]],
-        2:[[0,0],[1,0],[1,1],[1,2]], 3:[[0,1],[1,1],[2,1],[2,0]]
+        0: [[0,0],[1,0],[0,1],[0,2]], 1: [[0,0],[1,0],[2,0],[2,1]],
+        2: [[1,0],[1,1],[1,2],[0,2]], 3: [[0,0],[0,1],[1,1],[2,1]]
     },
     {//T Piece
         fill: '#74DF00',//lime
@@ -60,4 +60,28 @@ var objects = [
         0: [[0,0],[1,0],[1,1],[2,1]], 1: [[1,0],[1,1],[0,1],[0,2]],
         2: [[0,0],[1,0],[1,1],[2,1]], 3: [[1,0],[1,1],[0,1],[0,2]]
     }
-}
+];
+
+// current object
+var object = null;
+// object's orientation
+var orient = 2;
+// last position of the object
+var objectPos = [];
+// horizontal position (offset) of the object
+var hpos  = 4;
+// vertical position (offset) of the object
+var vpos  = 0;
+// whether this is the first tick of a new object
+var newOb = true;
+// last tick's time
+var t = new Date();
+// If true the last object should be glued
+var glue = false;
+
+// The Map, Grid, Matrix .. whatever
+// Note: The map has 3 types of fields (squares). Empty fields have
+// value 1, fields that are occupied by the current moving object have value 2,
+// and fields that are occupied by settled objects have a string value of the
+// color in which they should be displayed (object's 'fill' property)
+var Map = [];
