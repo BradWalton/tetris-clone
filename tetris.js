@@ -85,3 +85,13 @@ var glue = false;
 // and fields that are occupied by settled objects have a string value of the
 // color in which they should be displayed (object's 'fill' property)
 var Map = [];
+
+function resetGame(){
+    for( var i = 0; i < HCOUNT; i++ ){
+        Map[i] = [];
+        for( var j = 0; j < VCOUNT; j++ )
+            Map[i][j] = 1;
+    }
+    glue = false, newOb = true, vpos = or = 0, hpos  = 4;
+}
+resetGame();
